@@ -2,6 +2,7 @@
 
 export default function handler(req, res) {
   const { name, email, phone } = req.body;
+  console.log(process.env.TELEGRAM_CHAT_ID)
   fetch(
     `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${process.env.TELEGRAM_CHAT_ID}&text=${encodeURIComponent(name + "\n" + phone + "\n" + email)}`,
   );
