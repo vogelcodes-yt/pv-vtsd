@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from 'next/head'
 import { useRouter } from "next/router";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
@@ -31,11 +32,15 @@ export default function Home() {
   //   // ...
   // }
   return (
+
     <main
-      className={`flex flex-col items-center justify-between py-10 ${inter.className}`}
+    className={`flex flex-col items-center justify-between py-10 ${inter.className}`}
     >
+      <Head>
+      <title>My page title</title>
+    </Head>
       <section className="mx-auto flex max-w-[19.875rem] flex-col items-center lg:max-w-[53.25rem]">
-        <Image width={105} height={51} src={logo}></Image>
+        <Image alt="logo" width={105} height={51} src={logo}></Image>
         <h1 className="mb-[14.4px] mt-6 text-center text-[25px] font-extrabold leading-[29.17px] tracking-[-25] lg:text-[31.25px] ">
           Qualquer pessoa pode começar um negócio digital.
         </h1>
@@ -48,7 +53,7 @@ export default function Home() {
           coisas:
         </p>
         <div className="mt-6 flex items-center gap-x-4 lg:mt-12">
-          <Image src={elipse1}></Image>
+          <Image alt="item-1" src={elipse1}></Image>
 
           <p className="text-[15.67px] font-medium leading-[22.9px] tracking-[-25] lg:text-[16.75px]">
             Como criar um projeto protótipo e fazer a sua primeira venda em
@@ -56,14 +61,14 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-6 flex items-center gap-x-4 lg:mt-12">
-          <Image src={elipse2}></Image>
+          <Image alt="item-2" src={elipse2}></Image>
           <p className="text-[15.67px] font-medium leading-[22.9px] tracking-[-25] lg:text-[16.75px]">
             Como criar um projeto protótipo e fazer a sua primeira venda em
             pouco tempo e gastando pouco dinheiro;
           </p>
         </div>
         <div className="mt-6 flex items-center gap-x-4 lg:mt-12">
-          <Image src={elipse3}></Image>
+          <Image alt="item-3" src={elipse3}></Image>
           <p className="text-[15.67px] font-medium leading-[22.9px] tracking-[-25] lg:text-[16.75px]">
             Como criar um projeto protótipo e fazer a sua primeira venda em
             pouco tempo e gastando pouco dinheiro;
@@ -85,12 +90,12 @@ export default function Home() {
           </button>
           {/* </a> */}
           <div className="relative mx-auto mt-3 block h-[16px] w-[272px] lg:hidden lg:w-[529px]">
-            <Image src={pagamentos} />
+            <Image alt="meios de pagamento" src={pagamentos} />
           </div>
           <div className="mt-8 flex items-center justify-between">
             <div className="flex flex-col items-center">
               <div>
-                <Image src={iconeCalendario}></Image>
+                <Image alt="icone calendario" src={iconeCalendario}></Image>
               </div>
               <p className="text-[9.79px] font-bold lg:text-[20.6px]">
                 1 ano de <br /> acesso
@@ -98,7 +103,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center">
               <div>
-                <Image src={iconeZoom}></Image>
+                <Image alt="icone-zoom" src={iconeZoom}></Image>
               </div>
               <p className="text-[9.79px] font-bold lg:text-[20.6px]">
                 Suporte ao vivo <br /> no ZOOM
@@ -106,7 +111,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center">
               <div>
-                <Image src={iconeGarantia}></Image>
+                <Image alt="icone-garantia" src={iconeGarantia}></Image>
               </div>
               <p className="text-[9.79px] font-bold lg:text-[20.6px]">
                 Garantia de <br /> 15 dias
@@ -124,7 +129,7 @@ export default function Home() {
               ✕
             </button>
           </form>
-          <Image height={51} src={logo}></Image>
+          <Image alt="logo" height={51} src={logo}></Image>
           <p className="py-4 text-sm">
             Preencha o formulário e descubra como entrar para o digital
             faturando alto!
