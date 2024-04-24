@@ -1,12 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { name, email, phone } = req.body;
   console.log(process.env.TELEGRAM_CHAT_ID)
-  fetch(
+  const response = await fetch(
     `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${process.env.TELEGRAM_CHAT_ID}&text=${encodeURIComponent(name + "\n" + phone + "\n" + email)}`,
   );
   console.log(req.body);
+  console.log(response);
 
   res.redirect(
     303,
